@@ -40,7 +40,103 @@ Through SQL, we analyze trends and insights to support data-driven decisions.
 27. Identify the day of the week with the highest average ratings.
 28. Determine the day of the week with the highest average ratings for each branch.
 
+---
+
+
+## Top 10 Questions Querry & Results
+
+
+## 1. What is the count of distinct cities in the dataset?  
+Querry :    SELECT COUNT(DISTINCT City) AS Distinct_Cities FROM amazon;    
+Result : 3
+
+
+
+## 2. For each branch, what is the corresponding city?  
+Querry :    SELECT Branch, City FROM amazon GROUP BY Branch, City;     
+Result : 
+		A Yangon, 
+		C Naypyitaw, 
+		B Mandalay. 
+
+
+
+## 3. What is the count of distinct product lines in the dataset?  
+Querry :    SELECT COUNT(DISTINCT Pdt_line) AS Distinct_Product_Lines FROM amazon;   
+Result : 6
+
+
+
+## 4. Which payment method occurs most frequently?  
+Querry :    SELECT Payment, COUNT(*) AS Frequency FROM amazon GROUP BY Payment ORDER BY Frequency DESC LIMIT 1;   
+Result : Cash = 344
+
+
+
+## 5. Which product line has the highest sales?  
+Querry :    SELECT Pdt_line, ROUND(SUM(Total), 2) AS Total_Sales FROM amazon GROUP BY Pdt_line ORDER BY Total_Sales DESC LIMIT 1;         
+Result :  Food and beverages = 56144.96
+
+
+
+## 6. How much revenue is generated each month?  
+Querry :    SELECT month_name, ROUND(SUM(Total), 2) AS Monthly_Revenue FROM amazon GROUP BY month_name;   
+Result : 
+		January = 116292.11,
+		March = 108867.38,
+		February = 95727.58
+
+
+
+## 7. In which month did the cost of goods sold reach its peak?  
+Querry :    SELECT month_name, ROUND(SUM(cogs), 2) AS Total_COGS FROM amazon GROUP BY month_name ORDER BY Total_COGS DESC LIMIT 1;  
+Result : January = 110754.16
+
+
+
+## 8. Which product line generated the highest revenue?  
+Querry :    SELECT Pdt_line, MAX(Total) AS Highest_Revenue FROM amazon GROUP BY Pdt_line;  
+Result : 
+		Health and beauty = 950.25,
+		Electronic accessories = 942.45,
+		Home and lifestyle = 1023.75,
+		Sports and travel = 1002.12,
+		Food and beverages = 1034.46,
+		Fashion accessories = 1042.65.
+
+
+
+
+## 9. In which city was the highest revenue recorded?  
+Querry :    SELECT City, ROUND(SUM(Total), 2) AS Total_Revenue FROM amazon GROUP BY City ORDER BY Total_Revenue DESC LIMIT 1;  
+Result :  Naypyitaw = 110490.93
+
+
+
+## 10. Which product line incurred the highest Value Added Tax?  
+
+Querry :    SELECT Pdt_line, MAX(tax5perc) AS Highest_VAT FROM amazon GROUP BY Pdt_line;  
+Result : 
+		Health and beauty = 45.25,
+		Electronic accessories = 44.88,
+		Home and lifestyle = 48.75,
+		Sports and travel = 47.72,
+		Food and beverages = 49.26,
+		Fashion accessories = 49.65,
+
+
+  **********
+
+
+
+
+
+
 ## Conclusion
 
-This analysis uncovers valuable insights into sales trends, customer behavior, and product performance, helping businesses make informed decisions for growth and optimization.
+This analysis uncovers valuable insights into sales trends, customer behavior, and product performance, helping businesses make informed decisions for growth and optimization.  
+* ALL Questions are Resolved.  
+* Check PPT Presentation for Key Insights.  
+
+---
 
